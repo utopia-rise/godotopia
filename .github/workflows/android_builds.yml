@@ -66,15 +66,4 @@ jobs:
           SCONS_CACHE: ${{github.workspace}}/.scons_cache/
           ANDROID_NDK_ROOT: /usr/local/lib/android/sdk/ndk/${{env.ANDROID_NDK_VERSION}}/
         run: |
-          scons target=release tools=no android_arch=armv7
-          scons target=release tools=no android_arch=arm64v8
-          cd platform/android/java
-          ./gradlew generateGodotTemplates
-          cd ../../..
-          ls -l bin/
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: ${{ github.job }}
-          path: bin/*
-          retention-days: 14
+          scons -j2 verbose=yes warnings=all platform=android target=release tools=no

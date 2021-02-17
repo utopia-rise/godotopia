@@ -1,0 +1,6 @@
+[submodule "modules/kotlin_jvm"]
+	path = modules/kotlin_jvm
+	url = https://github.com/utopia-rise/godot-jvm.git
+[submodule "modules/isometric_maps"]
+	path = modules/isometric_maps
+	url = https://github.com/utopia-rise/IsometricMapModule.git
